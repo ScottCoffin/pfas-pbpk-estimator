@@ -3,7 +3,7 @@
 
 
 ### Master Function
-#The master function constructs a dataframe for a single iteration of MC variables, populates it and performs the serum calculations. It returns only the last row of the dataframe.
+#The master function constructs a dataframe for a single iteration of MC variables, populates it and performs the serum calculations. By default, it returns only the last row of the dataframe (the final timestep).
 
 #The following table defines the columns of the result dataframe:
 
@@ -43,7 +43,8 @@
 #' @param BkgdMk Monte Carlo varied background PFAS concentration in blood serum for males younger than 6 years old  
 #' @param perc_tap Monte Carlo varied values perc_tap (from the parameter_list) for the percentage of drinking water intake coming from tap water at different points in time perc_tap_dates (from parameter_list)      
 #' @param concs Monte Carlo varied values water_concs (from the parameter_list) for the concentration of PFAS in tap water at different points in time water_concs_dates  (from the parameter_list)  
-#' @param iter iteration number for printing to console  
+#' @param iter Iteration number for printing to console  
+#' @param full Return full output with all timesteps? Defaults to FALSE. 
 #'
 #' @return a data frame with each row representing a timestep and the PFAS serum concentrations populated in column 'Serum_a'  
 #'
